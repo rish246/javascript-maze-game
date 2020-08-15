@@ -6,6 +6,15 @@ const body = document.querySelector("body");
 const winMessage = document.querySelector(".modal");
 const closeButton = document.querySelector(".close-button");
 
+////////////////// add feature of levels /////////////////////
+
+let levelCounter = !localStorage.levelCounter ? 1 : localStorage.levelCounter;
+let [nRows, nCols] = [3, 3];
+
+console.log(levelCounter);
+
+nRows = levelCounter * 2 + nRows;
+nCols = levelCounter * 2 + nCols;
 // width and height of the canvas window
 const width = window.innerWidth;
 const height = window.innerHeight;
@@ -77,7 +86,6 @@ const walls = [wallRight, wallTop, wallLeft, wallBottom];
 World.add(world, walls);
 
 // call the function to generate the maze
-const [nRows, nCols] = [3, 3];
 
 const [grid, horizontals, verticals] = generateMaze(nRows, nCols);
 console.log(grid, horizontals, verticals);
@@ -268,6 +276,11 @@ Events.on(engine, "collisionStart", (event) => {
         winMessage.style.display = "none";
 
         // refresh my game for the new level
+        if (!localStorage.levelCounter) {
+          localStorage.levelCounter = 2;
+        } else {
+          localStorage.levelCounter++;
+        }
         location.reload();
       });
     }
