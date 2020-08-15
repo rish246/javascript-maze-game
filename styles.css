@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Atala", sans-serif;
+}
+
+.modal {
+  /* make this a modal */
+  display: none;
+
+  position: fixed;
+
+  /* sit on top of my page */
+  z-index: 1;
+
+  width: 50%;
+
+  height: 50%;
+
+  left: 25%;
+
+  top: 25%;
+
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(102, 203, 149, 1) 11.2%,
+    rgba(39, 210, 175, 1) 98.7%
+  );
+
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  margin: 15% auto;
+  padding: 20px;
+
+  width: 80%;
+  height: 80%;
+}
+
+.modal-content .close-button {
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(226, 37, 37, 1) 0%,
+    rgba(211, 49, 49, 1) 82.8%
+  );
+  color: white;
+  float: right;
+  padding: 10px 20px 10px 20px;
+  font-size: 1.5em;
+}
+
+.modal-content .win-message {
+  text-align: center;
+  margin-top: 20%;
+  font-size: 3em;
+}
+
+.modal-content .close-button:hover {
+  cursor: pointer;
+}
